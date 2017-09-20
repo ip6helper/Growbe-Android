@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Growbe</string>
+    <string name="welcome">Bienvenue dans l\'application GrowBe</string>
+    <string name="found">Configurer</string>
+    <string name="monitor">Consulter</string>
+</resources>
