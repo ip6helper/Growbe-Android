@@ -3,4 +3,5 @@
     <string name="welcome">Bienvenue dans l\'application GrowBe</string>
     <string name="found">Configurer</string>
     <string name="monitor">Consulter</string>
+    <string name="submit">Envoyez</string>
 </resources>

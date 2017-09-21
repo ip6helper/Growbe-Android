@@ -3,4 +3,5 @@
     <string name="welcome">Welcome to GrowBe application</string>
     <string name="found">Found</string>
     <string name="monitor">Monitor</string>
+    <string name="submit">Submit</string>
 </resources>
