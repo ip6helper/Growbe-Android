@@ -5,18 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     // Etiquette pour le debug via les logs.
-    String ETIQUETTE = "GrowBe";
+    String ETIQUETTE = "GrowBe Main";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.i(ETIQUETTE, "OnCreate Debug");
+        Log.i(ETIQUETTE, "onCreate Debug");
     }
 
     @Override
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickHandlerFound (View view)  {
 
-        Toast.makeText(this, "You Clicked Button found", Toast.LENGTH_LONG).show();
+        //Start the activity to discover all GrowBe around the Android device.
 
         Intent intentAct = new Intent(this, FoundActivity.class);
         startActivity(intentAct);
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickHandlerMonitor (View view)  {
 
-        Toast.makeText(this, "You Clicked Button monitor", Toast.LENGTH_LONG).show();
+        //Start the activity to Monitor all GrowBe around the Android device.
 
         Intent intentAct = new Intent(this, MonitorActivity.class);
         startActivity(intentAct);

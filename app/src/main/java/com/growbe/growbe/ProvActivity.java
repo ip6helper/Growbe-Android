@@ -21,6 +21,8 @@ import static android.os.SystemClock.sleep;
 
 public class ProvActivity extends AppCompatActivity {
 
+    String ETIQUETTE = "GrowBe Prov";
+
     WifiManager wifiMgmt;
     Thread      Thread1 = null;
     String      networkSSID;
@@ -34,15 +36,46 @@ public class ProvActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prov);
 
-        // Get SSID from the previous Activity.
-        String networkSSID = getIntent().getStringExtra("EXTRA_SSID");
+        Log.i(ETIQUETTE, "onCreate Debug");
 
-        Log.d("GrowBe", "You prov SSID: " + networkSSID);
+        // Get SSID from the previous Activity.
+        networkSSID = getIntent().getStringExtra("EXTRA_SSID");
+
+        Log.d(ETIQUETTE, "You provide the SSID: " + networkSSID);
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(ETIQUETTE, "onStart Debug");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(ETIQUETTE, "onRestart Debug");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(ETIQUETTE, "onResume Debug");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(ETIQUETTE, "onStop Debug");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(ETIQUETTE, "onDestroy Debug");
     }
 
     public void clickHandlerProv (View view)  {
 
-        // Start the TCP sending thread.
+        // Start the thread to send all the configuration to the GrowBe device.
         this.Thread1 = new Thread(new CfgThread());
         this.Thread1.start();
     }

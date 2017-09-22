@@ -4,4 +4,6 @@
     <string name="found">Found</string>
     <string name="monitor">Monitor</string>
     <string name="submit">Submit</string>
+    <string name="select">Select the GrowBe to configure</string>
+    <string name="no_growbe">There is no GrowBe to configure</string>
 </resources>

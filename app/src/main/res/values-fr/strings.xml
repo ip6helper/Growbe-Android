@@ -4,4 +4,6 @@
     <string name="found">Configurer</string>
     <string name="monitor">Consulter</string>
     <string name="submit">Envoyez</string>
+    <string name="select">Selectionez un GrowBe a configurer</string>
+    <string name="no_growbe">Il n\'y a pas de GrowBe a configurer</string>
 </resources>
