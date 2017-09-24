@@ -9,12 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 
 import static android.os.SystemClock.sleep;
@@ -31,6 +34,9 @@ public class ProvActivity extends AppCompatActivity {
     public static final String  SERVERIP = "192.168.4.100";
     public static final int     SERVERPORT = 80;
 
+    private Spinner AuthSpinner;
+    private List<String> auths;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +46,25 @@ public class ProvActivity extends AppCompatActivity {
 
         // Get SSID from the previous Activity.
         networkSSID = getIntent().getStringExtra("EXTRA_SSID");
-
         Log.d(ETIQUETTE, "You provide the SSID: " + networkSSID);
+
+        // Fill-up the Authentication spinner.
+        AuthSpinner = (Spinner) findViewById(R.id.AuthSpinner);
+        auths = new ArrayList<String>();
+
+        auths.add("WPA2-home");
+        auths.add("WPA2-Entreprise");
+        auths.add("WEP");
+
+        // Creating Adapter for Spinner.
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, auths);
+        // Drop down layout style.
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Attaching data adapter to spinner.
+        AuthSpinner.setAdapter(dataAdapter);
+
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -80,11 +102,11 @@ public class ProvActivity extends AppCompatActivity {
         this.Thread1.start();
     }
 
-    class CfgThread implements Runnable {
+    private class CfgThread implements Runnable {
 
         public void run() {
 
-            Socket socket = null;
+            Socket socket;
 
             wifiMgmt = ((WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE));
 
@@ -115,7 +137,7 @@ public class ProvActivity extends AppCompatActivity {
                 InetAddress serverAddr = InetAddress.getByName(SERVERIP);
                 socket = new Socket(serverAddr, SERVERPORT);
 
-                if (socket.isConnected() == true){
+                if (socket.isConnected()){
 
                     // TODO: Loop here to send all data the the device.
 

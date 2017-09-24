@@ -6,4 +6,9 @@
     <string name="submit">Envoyez</string>
     <string name="select">Selectionez un GrowBe a configurer</string>
     <string name="no_growbe">Il n\'y a pas de GrowBe a configurer</string>
+    <string name="hint_name">Nom (e.g. Tomates)</string>
+    <string name="hint_ssid">SSID du réseau</string>
+    <string name="hint_psk">Mot de passe du réseau</string>
+    <string name="hint_server1">Adresse du serveur local</string>
+    <string name="hint_server2">Adresse du serveur internet</string>
 </resources>
