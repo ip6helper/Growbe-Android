@@ -40,7 +40,6 @@ public class ProvActivity extends AppCompatActivity {
     List<String>    authList;
 
 
-    public static final String  SERVERIP = "192.168.10.100";
     public static final int     SERVERPORT = 80;
 
 
@@ -184,12 +183,12 @@ public class ProvActivity extends AppCompatActivity {
                     (wifiGateway >> 16 & 0xff),
                     (wifiGateway >> 24 & 0xff));
 
-            String NetInfo = wifiName+"\n"+myIP+"\n"+myGateway;
+            String NetInfo = wifiName+"\n"+"My IP address: "+myIP+"\n"+"My Gateway: "+myGateway;
 
             Log.d(ETIQUETTE, "Current setting: " + NetInfo);
 
             try {
-                InetAddress serverAddr = InetAddress.getByName(SERVERIP);
+                InetAddress serverAddr = InetAddress.getByName(myGateway);
                 socket = new Socket(serverAddr, SERVERPORT);
 
                 if (socket.isConnected()){
