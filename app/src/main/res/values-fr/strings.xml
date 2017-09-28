@@ -11,4 +11,10 @@
     <string name="hint_psk">Mot de passe du réseau</string>
     <string name="hint_server1">Adresse du serveur local</string>
     <string name="hint_server2">Adresse du serveur internet</string>
+    <string-array name="WifiAuth">
+        <item>WPA/WPA2 PSK</item>
+        <item>802.1x EAP</item>
+        <item>WEP</item>
+        <item>Aucune</item>
+    </string-array>
 </resources>

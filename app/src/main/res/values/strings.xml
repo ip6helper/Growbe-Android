@@ -11,4 +11,10 @@
     <string name="hint_psk">Pre-Shared key</string>
     <string name="hint_server1">Local server address</string>
     <string name="hint_server2">Internet server address</string>
+    <string-array name="WifiAuth">
+        <item>WPA/WPA2 PSK</item>
+        <item>802.1x EAP</item>
+        <item>WEP</item>
+        <item>None</item>
+    </string-array>
 </resources>
